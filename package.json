@@ -34,7 +34,7 @@
     "build:mkdirp": "mkdirp ./build",
     "build:dedupe": "npm dedupe",
     "build:browserify": "browserify index.js -o ./build/tmi.js",
-    "build:uglify": "uglifyjs --compress --mangle --output ./build/tmi.min.js --source-map ./build/tmi.js.map ./build/tmi.js",
+    "build:uglify": "terser --compress --mangle --source-map --output ./build/tmi.min.js ./build/tmi.js",
     "build:sri": "node sri.js ./build/tmi.js",
     "build:sri-min": "node sri.js ./build/tmi.min.js"
   },
@@ -61,7 +61,7 @@
     "npm-run-all": "1.7.0",
     "rimraf": "2.5.2",
     "should": "7.0.4",
-    "uglify-js": "2.6.2"
+    "terser": "4.6.13"
   },
   "browser": {
     "ws": false,
